@@ -27,7 +27,7 @@ class MontyHallProblemSpecs
           val montyHall     = MontyHallProblem.init(carDoor).chooseDoor(originalChoice)
           val goatDoor      = montyHall.revealGoat()
           val changedChoice = (1 + 2 + 3) - originalChoice - goatDoor
-          val hasWon = montyHall.finalChoice(changedChoice).hasWon
+          val hasWon        = montyHall.finalChoice(changedChoice).hasWon
           simulationCount = simulationCount + 1
           if (hasWon) {
             successCount = successCount + 1
@@ -44,7 +44,7 @@ class MontyHallProblemSpecs
       forAll((montyHallProblemGen, "montyHallProblemGen")) {
         case MontyHallProblemGen(carDoor, originalChoice) =>
           val montyHall = MontyHallProblem.init(carDoor).chooseDoor(originalChoice)
-          val hasWon = montyHall.finalChoice(originalChoice).hasWon
+          val hasWon    = montyHall.finalChoice(originalChoice).hasWon
           simulationCount = simulationCount + 1
           if (hasWon) {
             successCount = successCount + 1
